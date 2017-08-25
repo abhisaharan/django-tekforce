@@ -30,3 +30,5 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
 
 
+def stocks(request):
+    return render(request, 'stocks.html')

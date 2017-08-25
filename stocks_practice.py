@@ -17,7 +17,7 @@ panel_data = data.DataReader(splitting_stocks_to_list, data_source, start_date, 
 
 # Getting just the adjusted closing prices. This will return a Pandas DataFrame
 # The index in this DataFrame is the major index of the panel_data.
-close = panel_data.ix['Close']
+close = panel_data.loc['Close']
 
 all_weekdays = pd.date_range(start=start_date, end=end_date, freq='B')
 
@@ -25,4 +25,4 @@ all_weekdays = pd.date_range(start=start_date, end=end_date, freq='B')
 # All we need to do is reindex close using all_weekdays as the new index
 close = close.reindex(all_weekdays)
 
-#print(close.head(10))
+# print(close.head(10))
